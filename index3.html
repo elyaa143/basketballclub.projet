@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <link rel="icon" href="./logo-search-grid-2x__3_-removebg-preview.png">
+  <title>Club- gellary</title>
+ <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Black Top Header */
+    .top-header {
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 20px;
+      font-size: 14px;
+    }
+
+    .top-header p {
+      margin: 0;
+    }
+
+    .social-media a {
+      text-decoration: none;
+      color: white;
+      margin-left: 10px;
+      font-size: 14px;
+    }
+
+    .social-media a:hover {
+      color: #f58634; /* Orange hover effect */
+    }
+
+    /* Navigation Bar */
+    header.navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #ed5725;
+      color: white;
+    }
+
+    .logo img {
+      width: 60px; /* Adjust the size as needed */
+      height: 60px; 
+      object-fit: cover;
+    }
+
+    header.navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    header.navbar ul li {
+      margin: 0 15px;
+    }
+
+    header.navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+    }
+
+    header.navbar ul li a:hover {
+      color: #ddd;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #ed5725;
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    footer .info {
+      flex: 1;
+      text-align: left;
+      font-style: italic;
+    }
+
+    .info, h6 img {
+      width: 20px;
+      border-radius: 7px;
+    }
+
+    .im img {
+      width: 50%;
+      text-align: center;
+    }
+
+    footer .copyright {
+      flex-basis: 100%;
+      margin-top: 10px;
+    }
+    
+    .gallery-section {
+      padding: 30px;
+      background-color: #f9f9f9;
+    }
+
+    .gallery-title {
+      text-align: center;
+      margin-bottom: 20px;
+      color: saddlebrown;
+      box-shadow: 10px 0 10px -5px ;
+      font-style: italic;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px ;
+      border: 2px solid #333;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-item .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .gallery-item:hover .overlay {
+      opacity: 1;
+    }
+    @media (max-width: 1200px) {
+    .top-header p {
+      font-size: 13px;
+    }
+    header.navbar ul li {
+      margin: 0 10px;
+    }
+    header.navbar ul li a {
+      font-size: 13px;
+    }
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .hero-content h1 {
+      font-size: 2.2rem;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+    }
+    .section {
+      padding: 30px 15px;
+    }
+    footer .info h6 {
+      font-size: 12px;
+    }
+    footer .info img {
+      width: 16px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .top-header {
+      flex-direction: column;
+      text-align: center;
+    }
+    .social-media {
+      margin-top: 5px;
+    }
+    header.navbar {
+      flex-direction: column;
+    }
+    header.navbar ul {
+      flex-direction: column;
+      align-items: center;
+    }
+    header.navbar ul li {
+      margin: 5px 0;
+    }
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+    .hero-content p {
+      font-size: 1rem;
+    }
+    .call-to-action {
+      height: auto;
+      padding: 20px 15px;
+      text-align: center;
+    }
+    .call-to-action h2 {
+      font-size: 1.5rem;
+    }
+    .call-to-action p {
+      font-size: 1rem;
+    }
+    .pagination .page-link {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .hero {
+      height: 80vh;
+    }
+    .hero-content h1 {
+      font-size: 1.8rem;
+    }
+    .hero-content p {
+      font-size: 0.9rem;
+    }
+    .section h2 {
+      font-size: 1.5rem;
+    }
+    .history {
+      font-size: 0.9rem;
+    }
+    .card-title {
+      font-size: 1rem;
+    }
+    .card-text {
+      font-size: 0.8rem;
+    }
+    footer .info h6 {
+      font-size: 10px;
+    }
+    footer .info img {
+      width: 14px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="top-header">
+    <p style="font-style: italic;">The number 1 platform for sports clubs in Morocco. Welcome to Olympique Nahda Basketball Club!</p>
+    <div class="social-media">
+      <a href="https://www.facebook.com/share/15bt3R62zD/" target="_blank">Facebook</a>
+      <a href="#" target="_blank">Twitter</a>
+      <a href="https://www.instagram.com/con_basket.ball?igsh=MzJranhoYmZ0cW1v" target="_blank">Instagram</a>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo"><img src="./projet/logo-search-grid-2x__3_-removebg-preview.png" alt="Club Logo"></div>
+    <nav>
+      <ul>
+        <li><a href="./index.HTML">Home</a></li>
+        <li><a href="./index2.html">About Us</a></li>
+        <li><a href="./index3.html">Club Activities</a></li>
+        <li><a href="./index4.html">Events</a></li>
+        <li><a href="./index5.html">Contact Us</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+  <section class="gallery-section">
+    <h2 class="gallery-title">Club Gallery</h2>
+    <h2 style="text-align: center;font-style: italic;font-weight: bold;text-decoration: underline;">"Witness the passion and teamwork that define Olympique Nahda."</h2>
+    <div class="gallery-container">
+      <div class="gallery-item">
+        <img src="./projet/1000014894.jpg" alt="Training Session 1">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/1000014900.jpg" alt="Team Celebration">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/1000014896.jpg" alt="Competition Action">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/1000014886.jpg" alt="Youth Training">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/1000014884.jpg" alt="Victory Moment">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/1000014902.jpg" alt="Team Practice">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/1000014908.jpg" alt="Fan Meetup">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/1000014912.jpg" alt="Award Ceremony">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/1000014916.jpg" alt="Charity Event">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/1000014918.jpg" alt="Pre-Match Warmup">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/WhatsApp Image 2025-01-19 à 18.14.18_c299b3bf.jpg" alt="Locker Room Preparation">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/1000014900.jpg" alt="Community Outreach">
+        <div class="overlay"></div>
+      </div>
+      <!-- New Images Added -->
+      <div class="gallery-item">
+        <img src="./projet/WhatsApp Image 2025-01-19 à 18.14.19_9a91d057.jpg" alt="New Image 1">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/WhatsApp Image 2025-01-19 à 18.14.31_13024dbb.jpg" alt="New Image 2">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/WhatsApp Image 2025-01-19 à 18.14.21_4f7595ad.jpg" alt="New Image 3">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/WhatsApp Image 2025-01-19 à 18.14.28_a0717286.jpg" alt="New Image 4">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/img1.jpg" alt="Community Outreach">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/IMG2.jpg" alt="Community Outreach">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/IMG3.jpg" alt="Community Outreach">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/IMG4.jpg" alt="Community Outreach">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/IMG5.jpg" alt="Community Outreach">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/IMG6.jpg" alt="Community Outreach">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/img7.jpg" alt="Community Outreach">
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="./projet/img8.jpg" alt="Community Outreach">
+        <div class="overlay"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" href="./index2.html" style="color: black;">Précédent</a></li>
+        <li class="page-item"><a class="page-link" href="./index.HTML" style="color: black;">1</a></li>
+        <li class="page-item"><a class="page-link" href="./index2.html"style="color: black;">2</a></li>
+        <li class="page-item"><a class="page-link" href="./index3.html">3</a></li>
+        <li class="page-item"><a class="page-link" href="./index4.html"style="color: black;">4</a></li>
+        <li class="page-item"><a class="page-link" href="./index5.html"style="color: black;">5</a></li>
+        
+        <li class="page-item"><a class="page-link" href="./index4.html"style="color: black;">Suivant</a></li>
+    </ul>
+  </div>
+
+  <footer>
+    <div class="info">
+      <h6><img src="./projet/email.png" alt="Email">Email Address: OlympiqueNahdaclub@gmail.com</h6>
+      <h6><img src="./projet/telephone.png" alt="telephone">0682730862</h6>
+      <h6><img src="./projet/location-pin.png" alt="Location">Salle couverte Takkadoum</h6>
+      <h6><img src="./projet/whatsapp.png" alt="WhatsApp">0666185282</h6>
+    </div>
+    <div class="im"><img src="./projet/logo-search-grid-2x__3_-removebg-preview.png" alt=""></div>
+    <div class="copyright">
+      <p>&copy;2024/2025 Olympique Nahda Basketball Club! - All rights reserved</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Olympique Nahda Club</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <link rel="icon" href="./logo-search-grid-2x__3_-removebg-preview.png">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    /* Black Top Header */
+    .top-header {
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 20px;
+      font-size: 14px;
+    }
+    .top-header p {
+      margin: 0;
+    }
+    .social-media a {
+      text-decoration: none;
+      color: white;
+      margin-left: 10px;
+      font-size: 14px;
+    }
+    .social-media a:hover {
+      color: #f58634;
+    }
+    /* Navigation Bar */
+    header.navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #ed5725;
+      color: white;
+    }
+    .logo img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+    }
+    header.navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    header.navbar ul li {
+      margin: 0 15px;
+    }
+    header.navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+    }
+    header.navbar ul li a:hover {
+      color: #ddd;
+    }
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: whitesmoke;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    .hero-content p {
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
+    /* Sections and Cards */
+    .section {
+      padding: 50px 20px;
+    }
+    .section h2 {
+      text-align: center;
+      color: #4d2e06;
+      margin-bottom: 30px;
+    }
+    .history {
+      background-color: seashell;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .call-to-action {
+      text-align: center;
+     background-image: url(./projet/hehehe.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     height: 50vh;
+      padding: 30px 20px;
+      margin-top: 20px;
+      border: 2px solid #4d2e06;
+      border-radius: 10PX 0;
+    }
+    .call-to-action h2 {
+      margin-bottom: 10px;
+    }
+    footer {
+      background-color:#ed5725 ;
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    footer .info {
+      flex: 1;
+      text-align: left;
+      font-style: italic;
+    }
+    .info,h6 img{
+      width: 20px;
+      border-radius: 7px;
+    }
+    .im img{
+      width: 50%;
+      text-align: center;
+    }
+   
+
+    footer .copyright {
+      flex-basis: 100%;
+      margin-top: 10px;
+    }
+    @media (max-width: 1200px) {
+    .top-header p {
+      font-size: 13px;
+    }
+    header.navbar ul li {
+      margin: 0 10px;
+    }
+    header.navbar ul li a {
+      font-size: 13px;
+    }
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .hero-content h1 {
+      font-size: 2.2rem;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+    }
+    .section {
+      padding: 30px 15px;
+    }
+    footer .info h6 {
+      font-size: 12px;
+    }
+    footer .info img {
+      width: 16px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .top-header {
+      flex-direction: column;
+      text-align: center;
+    }
+    .social-media {
+      margin-top: 5px;
+    }
+    header.navbar {
+      flex-direction: column;
+    }
+    header.navbar ul {
+      flex-direction: column;
+      align-items: center;
+    }
+    header.navbar ul li {
+      margin: 5px 0;
+    }
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+    .hero-content p {
+      font-size: 1rem;
+    }
+    .call-to-action {
+      height: auto;
+      padding: 20px 15px;
+      text-align: center;
+    }
+    .call-to-action h2 {
+      font-size: 1.5rem;
+    }
+    .call-to-action p {
+      font-size: 1rem;
+    }
+    .pagination .page-link {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .hero {
+      height: 80vh;
+    }
+    .hero-content h1 {
+      font-size: 1.8rem;
+    }
+    .hero-content p {
+      font-size: 0.9rem;
+    }
+    .section h2 {
+      font-size: 1.5rem;
+    }
+    .history {
+      font-size: 0.9rem;
+    }
+    .card-title {
+      font-size: 1rem;
+    }
+    .card-text {
+      font-size: 0.8rem;
+    }
+    footer .info h6 {
+      font-size: 10px;
+    }
+    footer .info img {
+      width: 14px;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="top-header">
+    <p style="font-style: italic;">The number 1 platform for sports clubs in Morocco. Welcome to Olympique Nahda Basketball Club!</p>
+    <div class="social-media">
+      <a href="https://www.facebook.com/share/15bt3R62zD/" target="_blank">Facebook</a>
+      <a href="#" target="_blank">Twitter</a>
+      <a href="https://www.instagram.com/con_basket.ball?igsh=MzJranhoYmZ0cW1v" target="_blank">Instagram</a>
+    </div>
+  </div>
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo"><img src="./projet/logo-search-grid-2x__3_-removebg-preview.png" alt="Club Logo"></div>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./index2.html">About Us</a></li>
+        <li><a href="./index3.html">Club Activities</a></li>
+        <li><a href="./index4.html">Events</a></li>
+        <li><a href="./index5.html">Contact Us</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+  <!-- Hero Section -->
+  <div class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="./projet/WhatsApp Vidéo 2025-01-18 à 19.26.40_4bd985cb.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
+      <h1> Olympique Nahda Club</h1>
+      <p style="font-style: italic;">"Empowering Athletes, Building Community, Creating Champions"</p>
+    </div>
+  </div>
+  <!-- Club History Section -->
+  <div class="container mt-5">
+    <div class="row align-items-center">
+      <!-- Text Section -->
+      <div class="col-md-6">
+        <h2 style="color: #4d2e06; text-align: center; margin-bottom: 20px;">About Us</h2>
+        <p style="background-color: seashell; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); line-height: 1.6;">
+          The basketball club, founded on September 1, 2023, is a vibrant community for basketball enthusiasts of all ages and skill levels. Its mission is to promote teamwork, fitness, and the love of the game while fostering a supportive and inclusive environment. The club organizes regular training sessions, friendly matches, and tournaments, offering members the opportunity to enhance their skills and connect with others who share their passion for basketball.
+        </p>
+        <p style="background-color: seashell; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); line-height: 1.6;">
+        Whether you're a seasoned player or just starting, the club welcomes everyone to be part of this exciting journey, celebrating the spirit of the sport both on and off the court.
+        </p>
+      </div>
+      
+
+      <!-- Carousel Section -->
+      <div class="col-md-6">
+        <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
+          <!-- Carousel Inner -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./projet/1000014912.jpg" class="d-block w-100 img-fluid rounded" alt="Team Image 1">
+            </div>
+            <div class="carousel-item">
+              <img src="./projet/1000014920.jpg" class="d-block w-100 img-fluid rounded" alt="Team Image 2">
+            </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Coach Section -->
+<div class="section">
+  <div class="container">
+    <h2>Meet Our Coaches</h2>
+    <div class="row text-center">
+      <!-- Coach Card 1 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="./projet/3amo.jpg" class="card-img-top rounded" alt="Coach 1">
+          <div class="card-body">
+            <h5 class="card-title">Coach Said Ouhari:(54 yearsOLD)</h5>
+            <p class="card-text">Head Coach with 10+ years of experience, specializing in player development. also he is a physical education Teacher </p>
+          </div>
+        </div>
+      </div>
+      <!-- Coach Card 2 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="./projet/CHEEF2.jpg" class="card-img-top rounded" alt="Coach 2">
+          <div class="card-body">
+            <h5 class="card-title">Coach Amine EL kasmi (21 yearsOLD)</h5>
+            <p class="card-text">Assistant Coach focused on tactics and team strategy.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Coach Card 3 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="./projet/CHEF1.jpg" class="card-img-top rounded" alt="Coach 3">
+          <div class="card-body">
+            <h5 class="card-title">Coach Rayhane Ouhari(20 yearsOLD)</h5>
+            <p class="card-text">Fitness Coach dedicated to enhancing player performance and endurance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Call to Action Section -->
+  <div class="call-to-action">
+    <h2>Join Our Club Today!</h2>
+    <p>Become part of a community that shares your passion for basketball. Whether you're a player, a fan, or a coach, we have a place for you.</p>
+    <a href="./page5.html" class="btn btn-primary">Contact Us</a>
+  </div>
+
+  <div class="container">
+    <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" href="./index.html" style="color: black;">Précédent</a></li>
+        <li class="page-item"><a class="page-link" href="./index.html" style="color: black;">1</a></li>
+        <li class="page-item"><a class="page-link" href="./index2.html">2</a></li>
+        <li class="page-item"><a class="page-link" href="./index3.html" style="color: black;">3</a></li>
+        <li class="page-item"><a class="page-link" href="./index4.html"style="color: black;">4</a></li>
+        <li class="page-item"><a class="page-link" href="./index5.html"style="color: black;">5</a></li>
+        <li class="page-item"><a class="page-link" href="./index3.html"style="color: black;">Suivant</a></li>
+    </ul>
+</div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="info">
+      <h6><img src="./projet/email.png" alt="Email">Email Address: OlympiqueNahdaclub@gmail.com</h6>
+      <h6><img src="./projet/telephone.png" alt="telephone">0682730862</h6>
+      <h6><img src="./projet/location-pin.png" alt="Location">Salle couverte Takkadoum</h6>
+      <h6><img src="./projet/whatsapp.png" alt="WhatsApp">0666185282</h6>
+    </div>
+    <div class="im"><img src="./projet/logo-search-grid-2x__3_-removebg-preview.png" alt=""></div>
+    <div class="copyright">
+      <p>&copy;2024/2025 Olympique Nahda Basketball Club! - All rights reserved</p>
+    </div>
+  </footer>
+  
+    
+  </body>
+  </html>
+
+
